@@ -1,19 +1,36 @@
+import java.util.Arrays;
+
 public class PeakElement {
 
-//    public int peakElement(int[] num){
+//    public static void main(String[] args) {
 //
-//        int mid = (left + right) / 2;
-//
-//        if ((mid == 0 || num[mid - 1] <= num[mid]) &&
-//                (mid == num.length - 1 || num[mid + 1] <= num[mid])) {
-//            return mid;
-//        }
-//        if (mid - 1 >= 0 && num[mid - 1] > num[mid]) {
-//            return peakElement(num, left, mid - 1);
-//        }
-//
-//        return peakElement(num, mid + 1, right);
+//        System.out.println(Arrays.toString(peakElement(new int[]{3, 2, 7, 5, 1, 9, 23, 1})));
 //    }
+
+    public int[] peakElement(int[] num){
+
+        if(num.length == 0) {
+            return new int[0];
+        }
+
+        int[] array2 = new int[num.length];
+        int counter = 0;
+        if (num[0]> num[1]) {
+            array2[counter] = num[0];
+            counter ++;
+        }
+        for (int i = 1; i < num.length; i++) {
+
+            if(num[i]  > num[i-1] && (num[i] > num[i+1])) {
+                array2[counter] = num[i];
+                counter ++;
+
+            }
+        }
+        return Arrays.copyOf(array2,counter);
+    }
+
+
 
 }
 
