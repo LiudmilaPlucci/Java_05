@@ -3,19 +3,26 @@ import java.util.Arrays;
 
 public class OddIndices {
 
-    public String oddIndices(int[] array) {
-//        int[] array = new int[]{2, 3, 5, 9, 11, 8, 15, 18, -61, 91};
-        int[] a = new int[array.length / 2];
-        int counter = 0;
+    /*/
+    Написать алгоритм OddIndices, который принимает массив
+    целых чисел, и возвращает массив значений нечетных
+    индексов Test Data:
+    Input = {-45, 590, 234, 985, 12, 68} Expected Result = {590, 985, 68}
+     */
 
-        for (int i = 1; i < array.length; i++) {
-            if (i % 2 != 0) {
-                a[counter] = array[i];
+    public int[] oddIndices(int[] array) {
+
+        if (array != null && array.length > 0) {
+            int counter = 0;
+            int[] newArray = new int[array.length / 2];
+
+            for (int i = 1; i < array.length;i += 2) {
+                newArray[counter] = array[i];
                 counter++;
-            }
-        }
 
-        return Arrays.toString(a);
+            } return newArray;
+
+        } return new int[0];
     }
 }
 

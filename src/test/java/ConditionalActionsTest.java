@@ -8,7 +8,7 @@ public class ConditionalActionsTest {
     public void testMultipleOf9And7_HappyPath() {
         ///AAA
 
-        int m = 63;
+        int m = 0;
 
        String expectedResult = "Good Number" ;
 

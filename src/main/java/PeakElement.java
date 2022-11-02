@@ -7,30 +7,47 @@ public class PeakElement {
 //        System.out.println(Arrays.toString(peakElement(new int[]{3, 2, 7, 5, 1, 9, 23, 1})));
 //    }
 
-    public int[] peakElement(int[] num){
+    public int[] peakElement(int[] num) {
 
-        if(num.length == 0) {
-            return new int[0];
-        }
-
-        int[] array2 = new int[num.length];
-        int counter = 0;
-        if (num[0]> num[1]) {
-            array2[counter] = num[0];
-            counter ++;
-        }
-        for (int i = 1; i < num.length; i++) {
-
-            if(num[i]  > num[i-1] && (num[i] > num[i+1])) {
-                array2[counter] = num[i];
-                counter ++;
-
+        if (num.length > 1) {
+            int count = 0;
+            if (num[0] > num[1]) {
+                count++;
             }
+            for (int i = 1; i < num.length - 1; i++) {
+                if (num[i] > num[i - 1] && num[i] > num[i + 1]) {
+                    count++;
+                }
+            }
+            if (num[(num.length - 1)] > num[(num.length - 2)]) {
+                count++;
+            }
+            int[] result = new int[count];
+
+            count = 0;
+            if (num[0] > num[1]) {
+                result[0] = num[0];
+                count++;
+            }
+            for (int i = 1; i < num.length - 1; i++) {
+                if (num[i] > num[i - 1] && num[i] > num[i + 1]) {
+                    result[count] = num[i];
+                    count++;
+                }
+            }
+            if (num[(num.length - 1)] > num[(num.length - 2)]) {
+                result[count] = num[(num.length - 1)];
+            }
+            return result;
+
         }
-        return Arrays.copyOf(array2,counter);
+
+        return num;
     }
 
-
-
 }
+
+
+
+
 

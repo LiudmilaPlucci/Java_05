@@ -7,26 +7,56 @@ public class Intersection {
 //    }
 
 
-    public  int[] findIntersection(int[] array1, int[] array2) {
+    public  int[] Intersection(int[] a, int[] b) {
 
 //        array1 = new int[]{1, 2, 4, 5, 89};
 //        array2 = new int[]{8, 9, 4, 2};
 //        array3 = new int[] {2,4};
 
-        int[] array3 = new int[array1.length * array2.length];
-        int counter = 0;
+        for (int i = 0; i < a.length; i++) {
 
-        for (int i = 0; i < array1.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
 
-            for (int j = 0; j < array2.length; j++) {
-
-                if (array1[i] == array2[j]) {
-                    array3[counter] = array1[i];
-                    counter ++;
+                if (a[i] == a[j]) {
+                    a[j] = -2147483648;
                 }
             }
         }
-        return Arrays.copyOf(array3,counter);
+        for (int i = 0; i < b.length; i++) {
+            for (int j = i + 1; j < b.length; j++) {
+                if (b[i] == b[j]) {
+
+                }
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (b[j] == a[i] && a[i] != -2147483648 && b[j] != -2147483648) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        if (count == 0) {
+
+            return new int[]{};
+        } else {
+            int[] result = new int[count];
+            count = 0;
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < b.length; j++) {
+                    if (b[j] == a[i] && a[i] != -2147483648 && b[j] != -2147483648) {
+                        result[count] = a[i];
+                        count++;
+                        break;
+                    }
+
+                }
+
+            }
+            return result;
+        }
     }
 
 

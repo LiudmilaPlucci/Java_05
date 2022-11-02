@@ -26,12 +26,12 @@ public class PeakElementTest {
     public void testPeakElementSomeNegative_HappyPath() {
 //        ///AAA
 
-        int[] array = new int[]{3, 2, -7, 5, 1, 9, 23, 1};
+        int[] array = new int[]{3, 2, -7, 5, 1, 9, 1, 23};
 
-        int[] expectedResult = new int[]{3,5,23};
+        int[] expectedResult = new int[]{3,5,9,23};
 
 ////        //act
-        int[] actualResult = new PeakElement().peakElement(new int[]{3, 2, -7, 5, 1, 9, 23, 1});
+        int[] actualResult = new PeakElement().peakElement(array);
 
 ////        //Assert
         Assert.assertEquals(actualResult, expectedResult);
@@ -41,7 +41,7 @@ public class PeakElementTest {
 
     @Test
 
-    public void testPeakElementSomeNegative_Negative() {
+    public void testPeakElementEmpty_Negative() {
 //        ///AAA
 
         int[] array = new int[]{};

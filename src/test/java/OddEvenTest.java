@@ -59,7 +59,7 @@ public class OddEvenTest {
     }
     @Test
 
-    public void testStartEvenNumber_NegativePath() {
+    public void testStartEvenNumber1_HappyPath() {
         ///AAA
         int n = Integer.MIN_VALUE -1;
         String expectedResult = "Odd";
