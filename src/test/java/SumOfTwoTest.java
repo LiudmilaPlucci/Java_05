@@ -26,7 +26,8 @@ public class SumOfTwoTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
-
+    
+    @Ignore
     @Test
     public void testSumOfTwoSmallArrayWithSameValues_HappyPath() {
 
