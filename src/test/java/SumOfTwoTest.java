@@ -1,6 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.annotations.Ignore;
+//import org.testng.annotations.Ignore;
 
 public class SumOfTwoTest {
 
@@ -28,7 +28,7 @@ public class SumOfTwoTest {
         Assert.assertEquals(actualResult,expectedResult);
     }
     
-    @Ignore
+   // @Ignore
     @Test
     public void testSumOfTwoSmallArrayWithSameValues_HappyPath() {
 
