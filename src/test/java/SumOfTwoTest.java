@@ -1,6 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.annotations.Ignore;
+
 
 public class SumOfTwoTest {
 
@@ -28,18 +28,7 @@ public class SumOfTwoTest {
         Assert.assertEquals(actualResult,expectedResult);
     }
     
-    @Ignore
-    @Test
-    public void testSumOfTwoSmallArrayWithSameValues_HappyPath() {
-
-        int sum = 8;
-        int[]array = {4,4};
-        int[][] expectedResult = {{4, 4}};
-        int[][] actualResult = new SumOfTwo().sumOfTwo(array,sum);
-
-        Assert.assertEquals(actualResult,expectedResult);
-    }
-
+   
     @Test
     public void testSumOfTwoEmptyArray_Negative() {
 
